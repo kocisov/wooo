@@ -5,6 +5,7 @@ const fs = require('fs-extra')
 
 const files = [
   'containers/App.js',
+  'containers/Input.js',
   'modules/index.js',
   'modules/loadingStatus.js',
   'store/index.js',

@@ -1,6 +1,6 @@
 {
-  "name": "wooo",
-  "version": "0.0.2",
+  "name": "redux-wooo",
+  "version": "0.0.3",
   "description": "Add redux scaffholding into your folder",
   "main": "index.js",
   "repository": {
