@@ -2,7 +2,7 @@
 > Add redux scaffholding into your folder
 
 ## What it does?
-Creates [files](https://github.com/Kocisov/wooo/tree/master/files) in specified path with:
+Install required dependencies and Create [files](https://github.com/Kocisov/wooo/tree/master/files) in specified path with:
   1. Two containers
   2. One [duck](https://github.com/erikras/ducks-modular-redux) module
   3. React-router and react-router-redux reducer
@@ -13,9 +13,6 @@ Creates [files](https://github.com/Kocisov/wooo/tree/master/files) in specified 
 ## Installation
 ```bash
 npm install -g redux-wooo
-
-# in your package, you will need to install these packages
-npm install --save redux redux-thunk react-router react-redux react-router-redux
 ```
 
 ## Usage
