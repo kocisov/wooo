@@ -21,11 +21,19 @@ let _p = argv._[0] || '.'
 
 clear()
 
-const firstSpinner = ora(chalk.yellow('Installing dependencies\n')).start()
+const firstSpinner = ora({
+  text: 'Installing dependencies\n',
+  color: 'yellow',
+  spinner: 'dots3'
+}).start()
 shelljs.exec('npm install --save react react-dom redux react-redux redux-thunk react-router react-router-redux')
 firstSpinner.succeed()
 
-const secondSpinner = ora(chalk.yellow(chalk.yellow(`Creating your files into ${_p} directory`))).start()
+const secondSpinner = ora({
+  text: `Creating your files into ${_p} directory`,
+  color: 'yellow',
+  spinner: 'dots3'
+}).start()
 setTimeout(() => {
   files.forEach(file => {
     try {

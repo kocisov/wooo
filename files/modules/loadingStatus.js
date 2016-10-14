@@ -1,17 +1,17 @@
-const CHANGE_LOADING_STATUS = 'CHANGE_LOADING_STATUS'
+const CHANGE = '.../loadingStatus/CHANGE'
 
-export function changeLoading (status) {
-  return {
-    type: CHANGE_LOADING_STATUS,
-    status
+export default function loadingStatus (state = false, action) {
+  switch (action.type) {
+    case CHANGE:
+    return state = action.status
+    default:
+    return state
   }
 }
 
-export default function loadingStatus (state, action) {
-  switch (action.type) {
-    case CHANGE_LOADING_STATUS:
-      return state = action.status
-    case default:
-      return state
+export function changeLoadingStatus (status) {
+  return {
+    type: CHANGE,
+    status
   }
 }

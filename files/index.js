@@ -1,11 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, Route, browserHistory } from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router'
 import { Provider } from 'react-redux'
 import { syncHistoryWithStore } from 'react-router-redux'
 import configureStore from './store'
 import App from './containers/App'
-import Input from './containers/Input'
+import Home from './containers/Home'
 
 const store = configureStore({
   /* Initial State */
@@ -17,7 +17,7 @@ ReactDOM.render((
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
-        <Route path="/input" component={Input} />
+        <IndexRoute component={Home} />
         {/* Your routes here */}
       </Route>
     </Router>
