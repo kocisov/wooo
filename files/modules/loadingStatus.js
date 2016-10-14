@@ -3,9 +3,9 @@ const CHANGE = '.../loadingStatus/CHANGE'
 export default function loadingStatus (state = false, action) {
   switch (action.type) {
     case CHANGE:
-    return state = action.status
+      return state = action.status
     default:
-    return state
+      return state
   }
 }
 
