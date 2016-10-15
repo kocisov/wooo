@@ -7,13 +7,13 @@ const ora = require('ora')
 
 const files = [
   'containers/App.js',
-  'containers/Input.js',
+  'containers/Home.js',
+  'index.js',
   'modules/index.js',
   'modules/loadingStatus.js',
-  'store/index.js',
   'store/configureStore.dev.js',
   'store/configureStore.prod.js',
-  'index.js',
+  'store/index.js'
 ]
 
 const argv = require('minimist')(process.argv.slice(2))
