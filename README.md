@@ -1,5 +1,4 @@
-# wooo [![npm](https://img.shields.io/npm/v/redux-wooo.svg)]() [![davidm](https://david-dm.org/kocisov/wooo.svg)]()
-[![Code Climate](https://codeclimate.com/github/Kocisov/wooo/badges/gpa.svg)](https://codeclimate.com/github/Kocisov/wooo)
+# wooo [![npm](https://img.shields.io/npm/v/redux-wooo.svg)]() [![davidm](https://david-dm.org/kocisov/wooo.svg)]() [![Code Climate](https://codeclimate.com/github/Kocisov/wooo/badges/gpa.svg)](https://codeclimate.com/github/Kocisov/wooo)
 > Add redux scaffholding into your folder
 
 ## What it does?
