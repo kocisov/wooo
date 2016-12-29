@@ -11,6 +11,7 @@ const exec = (command, env) =>
 const files = [
   'components/Header/Header.css',
   'components/Header/Header.js',
+  'components/Header/Header.test.js',
   'containers/App.js',
   'containers/Home.js',
   'css/index.css',
