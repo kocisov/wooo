@@ -1,7 +1,7 @@
 {
   "name": "redux-wooo",
   "version": "0.0.7",
-  "description": "Add redux scaffholding into your folder",
+  "description": "Add redux scaffolding into your folder",
   "main": "index.js",
   "repository": {
     "url": "kocisov/wooo",

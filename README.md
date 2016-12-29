@@ -1,5 +1,5 @@
 # wooo [![npm](https://img.shields.io/npm/v/redux-wooo.svg)]() [![davidm](https://david-dm.org/kocisov/wooo.svg)]() [![Code Climate](https://codeclimate.com/github/Kocisov/wooo/badges/gpa.svg)](https://codeclimate.com/github/Kocisov/wooo)
-> Add redux scaffholding into your folder
+> Add redux scaffolding into your folder
 
 ## What it does?
 Install required dependencies and Create [files](https://github.com/Kocisov/wooo/tree/master/files) in specified path with:
@@ -8,7 +8,7 @@ Install required dependencies and Create [files](https://github.com/Kocisov/wooo
   3. React-router and react-router-redux reducer
   4. Redux store configuration for production and development
 
-**This is just fast scaffholding, not actual code!**
+**This is just fast scaffolding, not actual code!**
 
 ## Installation
 ```bash
