@@ -3,24 +3,36 @@
 
 ## What it does?
 Install required dependencies and Create [files](https://github.com/Kocisov/wooo/tree/master/files) in specified path with:
-  1. Two containers
-  2. One [duck](https://github.com/erikras/ducks-modular-redux) module
+  1. One [duck](https://github.com/erikras/ducks-modular-redux) module
+  2. One stateless component with CSS and Rendering test
+    - Structured as
+    ```
+    /components
+      /Header
+        /Header.js
+        /Header.css
+        /Header.test.js
+    ```
   3. React-router and react-router-redux reducer
   4. Redux store configuration for production and development
+  5. Two containers
 
 **This is just fast scaffolding, not actual code!**
 
 ## Installation
 ```bash
-[sudo] npm install -g redux-wooo
-[sudo] yarn global add redux-wooo
+# with npm
+$ [sudo] npm install -g redux-wooo
+
+# or with yarn
+$ [sudo] yarn global add redux-wooo
 ```
 
 ## Usage
 ```
 wooo [args]
-  --dir : Directory of wooo files
-  --yarn : Use yarn instead of npm for installing dependencies
+  --dir [path]             Directory, where wooo create files (Default is your current directory)
+  --yarn [true/false]      Use yarn instead of npm for installing dependencies
 ```
 
 **Default path is your current location in bash!**

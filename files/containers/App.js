@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import * as actionCreators from '../modules/loadingStatus'
+import Header from '../components/Header/Header'
 
 class App extends Component {
   render () {
@@ -8,6 +9,9 @@ class App extends Component {
     const loading = loadingStatus ? false : true
     return (
       <div>
+        <Header>
+          <h2>Logo</h2>
+        </Header>
         <div onClick={() => {
           changeLoadingStatus(loading)
         }}>
