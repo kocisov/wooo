@@ -20,19 +20,16 @@ Install required dependencies and Create [files](https://github.com/Kocisov/wooo
 **This is just fast scaffolding, not actual code!**
 
 ## Installation
-```bash
-# with npm
-$ [sudo] npm install -g redux-wooo
+> Yarn is required since version 0.0.9
 
-# or with yarn
+```bash
 $ [sudo] yarn global add redux-wooo
 ```
 
 ## Usage
 ```
 wooo [args]
-  --dir [path]             Directory, where wooo create files (Default is your current directory)
-  --yarn [true/false]      Use yarn instead of npm for installing dependencies
+  --dir [path]             Directory, where wooo create files dependencies
 ```
 
 **Default path is your current location in bash!**

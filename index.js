@@ -3,7 +3,6 @@ const chalk = require('chalk')
 const clear = require('clear')
 const execSync = require('child_process').execSync
 const fs = require('fs-extra')
-const ora = require('ora')
 
 const exec = (command, env) =>
   execSync(command, { stdio: 'inherit', env })
@@ -24,27 +23,14 @@ const files = [
 ]
 
 const argv = require('minimist')(process.argv.slice(2))
-let useDir = argv.dir || '.'
-let useYarn = argv.yarn || false
+const useDir = argv.dir || '.'
 
 clear()
 
-const firstSpinner = ora({
-  text: 'Installing dependencies\n',
-  color: 'yellow',
-  spinner: 'dots3'
-}).start()
+console.log(chalk.yellow('Installing dependencies with yarn.'))
+exec(`yarn add redux react-redux redux-thunk react-router react-router-redux`)
 
-exec(`${useYarn ? 'yarn add' : 'npm install --save'} react react-dom redux react-redux redux-thunk react-router react-router-redux`)
-
-firstSpinner.succeed()
-
-const secondSpinner = ora({
-  text: `Creating your files into ${useDir} directory`,
-  color: 'yellow',
-  spinner: 'dots3'
-}).start()
-
+console.log(chalk.yellow(`Creating files in ${useDir} directory.`))
 files.forEach(file => {
   try {
     let data = fs.readFileSync(`${__dirname}/files/${file}`, 'utf-8')
@@ -58,5 +44,3 @@ files.forEach(file => {
     console.log(chalk.red(`Couldn't read file ${file}`))
   }
 })
-
-secondSpinner.succeed()

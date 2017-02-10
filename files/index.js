@@ -7,6 +7,8 @@ import configureStore from './store'
 import App from './containers/App'
 import Home from './containers/Home'
 
+import './css/index.css'
+
 const store = configureStore({
   /* Initial State */
   loadingStatus: false
