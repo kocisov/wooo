@@ -21,12 +21,12 @@ const useNpm = argv.npm || false
 const version = argv.version || false
 
 if (version) {
-  return console.log('Wooo\'s version is:', chalk.green('0.1.0'))
+  return console.log('Wooo\'s version is:', chalk.green('0.1.1'))
 }
 
 const command = useNpm
-  ? ['npm', 'install', '--save', 'react-redux', 'redux', 'react-router', 'react-router-redux']
-  : ['yarn', 'add', 'react-redux', 'redux', 'react-router', 'react-router-redux']
+  ? ['npm', 'install', '--save', 'react-redux', 'redux', 'redux-thunk', 'react-router', 'react-router-redux']
+  : ['yarn', 'add', 'react-redux', 'redux', 'redux-thunk', 'react-router', 'react-router-redux']
 
 console.log(chalk.yellow('Installing dependencies with ' + command[0] + '.'))
 exec(`${command.join(' ')}`)
