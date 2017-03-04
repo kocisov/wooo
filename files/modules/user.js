@@ -2,7 +2,7 @@ const CHANGE = '.../user/CHANGE'
 
 export default function user (state = {
   name: 'Koci',
-  avatar: 'https://placecage.com/200/200',
+  avatar: '//placecage.com/200/200',
   rank_group: 5,
   points: 1341
 }, action) {

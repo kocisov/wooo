@@ -2,6 +2,7 @@
 const chalk = require('chalk')
 const clear = require('clear')
 const execSync = require('child_process').execSync
+const yargs = require('yargs')
 const fs = require('fs-extra')
 
 clear()
@@ -9,19 +10,35 @@ clear()
 const exec = (command, env) =>
   execSync(command, { stdio: 'inherit', env })
 
-const argv = require('minimist')(process.argv.slice(2))
-const useDir = argv.dir || '.'
+const argv = yargs
+  .alias('v', 'version')
+  .alias('d', 'dir')
+  .alias('n', 'npm')
+  .argv
 
-console.log(chalk.yellow('Installing dependencies with yarn.'))
-exec(`yarn add redux react-redux redux-thunk react-router react-router-redux`)
+const useDir = argv.dir.length > 0 ? argv.dir : '.'
+const useNpm = argv.npm || false
+const version = argv.version || false
+
+if (version) {
+  return console.log('Wooo\'s version is:', chalk.green('0.1.0'))
+}
+
+const command = useNpm
+  ? ['npm', 'install', '--save', 'react-redux', 'redux', 'react-router', 'react-router-redux']
+  : ['yarn', 'add', 'react-redux', 'redux', 'react-router', 'react-router-redux']
+
+console.log(chalk.yellow('Installing dependencies with ' + command[0] + '.'))
+exec(`${command.join(' ')}`)
+
+clear()
 
 console.log(chalk.yellow(`Creating files in ${useDir} directory.`))
 fs.copy(__dirname + '/files', useDir, err => {
   if (err) {
-    return console.error('Couldn\'t create files.', err)
+    return console.log(chalk.red('Couldn\'t create files.\n'), err)
   }
 
-  console.log()
   console.log(chalk.green('Successfully created wooo\'s files'))
   console.log(chalk.blue('Redux is ready for use!'))
 })
