@@ -1,8 +1,8 @@
 import { combineReducers } from 'redux'
 import { routerReducer } from 'react-router-redux'
-import loadingStatus from './loadingStatus'
+import user from './user'
 
 export default combineReducers({
-  loadingStatus,
+  user,
   routing: routerReducer
 })
