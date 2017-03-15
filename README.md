@@ -2,10 +2,7 @@
   <img title="" src="https://kocisov.github.io/wooo/static/deer.svg" alt="" width="250" />
 </p>
 
-<p align="center">
-  [![Build Status](https://travis-ci.org/Kocisov/wooo.svg?branch=master)](https://travis-ci.org/Kocisov/wooo) [![npm](https://img.shields.io/npm/v/redux-wooo.svg)](http://npmjs.com/redux-wooo) [![davidm](https://david-dm.org/kocisov/wooo.svg)](https://david-dm.org/kocisov/wooo) [![Code Climate](https://codeclimate.com/github/Kocisov/wooo/badges/gpa.svg)](https://codeclimate.com/github/Kocisov/wooo)
-</p>
-
+# Wooo [![Build Status](https://travis-ci.org/Kocisov/wooo.svg?branch=master)](https://travis-ci.org/Kocisov/wooo) [![npm](https://img.shields.io/npm/v/redux-wooo.svg)](http://npmjs.com/redux-wooo) [![davidm](https://david-dm.org/kocisov/wooo.svg)](https://david-dm.org/kocisov/wooo) [![Code Climate](https://codeclimate.com/github/Kocisov/wooo/badges/gpa.svg)](https://codeclimate.com/github/Kocisov/wooo)
 > Add redux scaffolding into your folder
 
 [https://kocisov.github.io/wooo/](https://kocisov.github.io/wooo/)
