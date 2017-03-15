@@ -1,48 +1,36 @@
 const fs = require('fs')
 
+function dp (pth, done) {
+  fs.open(pth, 'r', (err, fd) => {
+    if (err) {
+      return done(err)
+    }
+    done()
+  })
+}
+
 describe('after running wooo', () => {
   it('should created components folder', (done) => {
-    fs.open(`${__dirname}/tst/components`, 'r', (err, fd) => {
-      if (err) {
-        return done(err)
-      }
-      done()
-    })
+    dp(`${__dirname}/tst/components`, done)
   })
 
   it('should created containers folder', (done) => {
-    fs.open(`${__dirname}/tst/containers`, 'r', (err, fd) => {
-      if (err) {
-        return done(err)
-      }
-      done()
-    })
+    dp(`${__dirname}/tst/containers`, done)
   })
 
   it('should created modules folder', (done) => {
-    fs.open(`${__dirname}/tst/modules`, 'r', (err, fd) => {
-      if (err) {
-        return done(err)
-      }
-      done()
-    })
+    dp(`${__dirname}/tst/modules`, done)
   })
 
   it('should created static folder', (done) => {
-    fs.open(`${__dirname}/tst/static`, 'r', (err, fd) => {
-      if (err) {
-        return done(err)
-      }
-      done()
-    })
+    dp(`${__dirname}/tst/static`, done)
   })
 
   it('should created store folder', (done) => {
-    fs.open(`${__dirname}/tst/store`, 'r', (err, fd) => {
-      if (err) {
-        return done(err)
-      }
-      done()
-    })
+    dp(`${__dirname}/tst/store`, done)
+  })
+
+  it('should created index file', (done) => {
+    dp(`${__dirname}/tst/index.js`, done)
   })
 })
