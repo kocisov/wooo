@@ -24,7 +24,7 @@ export default function installDeps ({
 
   yellow(`Installing dependencies with ${manager}`)
   // blue(`${command} ${deps.join(' ')}`)
-  exec(`${command.join(' ')}`)
+  exec(`${command} ${deps.join(' ')}`)
 
   return new Promise(res => {
     res(directory)
