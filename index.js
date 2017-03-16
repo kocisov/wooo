@@ -25,8 +25,8 @@ if (version) {
 }
 
 const command = useNpm
-  ? ['npm', 'install', '--save', 'react-redux', 'redux', 'redux-thunk', 'react-router', 'react-router-redux']
-  : ['yarn', 'add', 'react-redux', 'redux', 'redux-thunk', 'react-router', 'react-router-redux']
+  ? ['npm', 'install', '--save', 'react-redux', 'redux', 'redux-thunk', 'react-router@3.0.2', 'react-router-redux']
+  : ['yarn', 'add', 'react-redux', 'redux', 'redux-thunk', 'react-router@3.0.2', 'react-router-redux']
 
 console.log(chalk.yellow('Installing dependencies with ' + command[0] + '.'))
 exec(`${command.join(' ')}`)
