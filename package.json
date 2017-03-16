@@ -12,7 +12,7 @@
   },
   "scripts": {
     "pretest": "node index.js -d ./tst",
-    "test": "mocha test.js",
+    "test": "nyc mocha test.js",
     "prepublish": "yarn compile",
     "compile": "babel src -d lib",
     "compile:with-minify": "babel src -d lib --minified"
@@ -29,6 +29,7 @@
     "babel-cli": "^6.24.0",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.2.2",
-    "mocha": "^3.2.0"
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2"
   }
 }

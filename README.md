@@ -3,7 +3,7 @@
 </p>
 
 # Wooo [![Build Status](https://travis-ci.org/Kocisov/wooo.svg?branch=next)](https://travis-ci.org/Kocisov/wooo) [![npm](https://img.shields.io/npm/v/redux-wooo.svg)](http://npmjs.com/redux-wooo) [![davidm](https://david-dm.org/kocisov/wooo.svg)](https://david-dm.org/kocisov/wooo) [![Code Climate](https://codeclimate.com/github/Kocisov/wooo/badges/gpa.svg)](https://codeclimate.com/github/Kocisov/wooo)
-> Add redux scaffolding into your folder
+> Tool that helps you add Redux to your React project without pain
 
 [https://kocisov.github.io/wooo/](https://kocisov.github.io/wooo/)
 
