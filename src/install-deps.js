@@ -7,6 +7,7 @@ let deps = [
 ]
 
 export default function installDeps ({
+  directory,
   manager,
   router
 }) {
@@ -24,4 +25,8 @@ export default function installDeps ({
   yellow(`Installing dependencies with ${manager}`)
   blue(`${command} ${deps.join(' ')}`)
   // exec(`${command.join(' ')}`)
+
+  return new Promise(res => {
+    res(directory)
+  })
 }

@@ -1,8 +1,11 @@
+import clear from 'clear'
 import { bold } from './utils'
 import { version } from '../package.json'
 
 export default function options (argv) {
   let opts = {}
+
+  clear()
 
   if (argv.version) {
     bold(`Wooo's current version is ${version}.`)
@@ -17,7 +20,7 @@ export default function options (argv) {
     opts.dir = argv.dir
   }
 
-  return Promise(res => {
+  return new Promise(res => {
     res(opts)
   })
 }

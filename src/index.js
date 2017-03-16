@@ -1,10 +1,11 @@
 #!/usr/bin/env node
-import clear from 'clear'
 import yargs from 'yargs'
+import 'babel-polyfill'
 
 import checkRc from './wooorc'
 import installDeps from './install-deps'
 import options from './options'
+import createFiles from './create-files'
 
 const argv = yargs
   .alias('v', 'version')
@@ -12,15 +13,13 @@ const argv = yargs
   .alias('n', 'npm')
   .argv
 
-clear()
-
 options(argv)
-  .checkRc(_options)
-  .then(opts => {
-    installDeps(opts)
+.then(opts => {
+  checkRc(opts)
+  .then(depOpts => {
+    installDeps(depOpts)
+    .then(directory => {
+      createFiles(directory)
+    })
   })
-/*
-  .then(dir => {
-    addFiles(dir)
-  })
-*/
+})
