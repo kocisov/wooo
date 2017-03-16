@@ -21,6 +21,7 @@ Install required dependencies and Create [files](https://github.com/Kocisov/wooo
 **This is just fast scaffolding, not actual code!**
 
 ## Installation
+**Node version 6 or higher is required!**
 ```bash
 # with yarn
 $ yarn global add redux-wooo
