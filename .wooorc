@@ -1,0 +1,5 @@
+{
+  "manager": "yarn",
+  "router": "v4",
+  "directory": "./tst"
+}
