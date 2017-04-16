@@ -12,6 +12,10 @@ export default function options(argv) {
     process.exit();
   }
 
+  if (argv.template && argv.template.length > 0) {
+    opts.template = argv.template;
+  }
+
   if (argv.npm) {
     opts.useNpm = true;
   }

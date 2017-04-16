@@ -16,7 +16,7 @@
     "prepublish": "yarn compile",
     "compile": "yarn prettier && babel src -d lib",
     "compile:with-minify": "babel src -d lib --minified",
-    "prettier": "prettier --write src/**/*.js --single-quote --tab-width 2 --trailing-comma es5"
+    "prettier": "prettier --write {src,templates}/**/*.js --single-quote --tab-width 2 --trailing-comma es5"
   },
   "author": "kocisov",
   "license": "MIT",

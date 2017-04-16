@@ -1,12 +1,12 @@
 import { stat, readFile } from 'fs-extra';
 import { blue } from './utils';
 
-export default function checkRc({ useNpm, dir }) {
+export default function checkRc({ useNpm, dir, template }) {
   return new Promise(res => {
     if (useNpm && dir) {
       res({
         manager: useNpm ? 'npm' : 'yarn',
-        router: 'v3',
+        template: template === 'r3' ? 'r3' : 'r4',
         dir,
       });
     }
@@ -17,7 +17,7 @@ export default function checkRc({ useNpm, dir }) {
 
         res({
           manager: 'yarn',
-          router: 'v4',
+          template: 'r4',
         });
       } else {
         readFile('./.wooorc', (e, r) => {
