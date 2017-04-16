@@ -1,26 +1,26 @@
-import clear from 'clear'
-import { bold } from './utils'
-import { version } from '../package.json'
+import clear from 'clear';
+import { bold } from './utils';
+import { version } from '../package.json';
 
-export default function options (argv) {
-  let opts = {}
+export default function options(argv) {
+  let opts = {};
 
-  clear()
+  clear();
 
   if (argv.version) {
-    bold(`Wooo's current version is ${version}.`)
-    process.exit()
+    bold(`Wooo's current version is ${version}.`);
+    process.exit();
   }
 
   if (argv.npm) {
-    opts.useNpm = true
+    opts.useNpm = true;
   }
 
   if (argv.dir && argv.dir.length > 0) {
-    opts.dir = argv.dir
+    opts.dir = argv.dir;
   }
 
   return new Promise(res => {
-    res(opts)
-  })
+    res(opts);
+  });
 }

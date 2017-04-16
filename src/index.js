@@ -1,25 +1,19 @@
 #!/usr/bin/env node
-import yargs from 'yargs'
-import 'babel-polyfill'
+import yargs from 'yargs';
+import 'babel-polyfill';
 
-import checkRc from './wooorc'
-import installDeps from './install-deps'
-import options from './options'
-import createFiles from './create-files'
+import checkRc from './wooorc';
+import installDeps from './install-deps';
+import options from './options';
+import createFiles from './create-files';
 
-const argv = yargs
-  .alias('v', 'version')
-  .alias('d', 'dir')
-  .alias('n', 'npm')
-  .argv
+const argv = yargs.alias('v', 'version').alias('d', 'dir').alias('n', 'npm')
+  .argv;
 
-options(argv)
-.then(opts => {
-  checkRc(opts)
-  .then(depOpts => {
-    installDeps(depOpts)
-    .then(directory => {
-      createFiles(directory)
-    })
-  })
-})
+options(argv).then(opts => {
+  checkRc(opts).then(depOpts => {
+    installDeps(depOpts).then(directory => {
+      createFiles(directory);
+    });
+  });
+});

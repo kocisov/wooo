@@ -1,32 +1,21 @@
-import { exec, yellow, blue } from './utils'
+import { exec, yellow, blue } from './utils';
 
-let deps = [
-  'react-redux',
-  'redux',
-  'redux-thunk'
-]
+let deps = ['react-redux', 'redux', 'redux-thunk'];
 
-export default function installDeps ({
-  directory,
-  manager,
-  router
-}) {
-  const command = manager === 'yarn' ? 'yarn add' : 'npm install --save'
+export default function installDeps({ directory, manager, router }) {
+  const command = manager === 'yarn' ? 'yarn add' : 'npm install --save';
 
   if (router === 'v4') {
-    deps.push('react-router-dom')
+    deps.push('react-router-dom');
   } else {
-    deps.push(
-      'react-router-redux',
-      'react-router@3.0.2'
-    )
+    deps.push('react-router-redux', 'react-router@3.0.2');
   }
 
-  yellow(`Installing dependencies with ${manager}`)
+  yellow(`Installing dependencies with ${manager}`);
   // blue(`${command} ${deps.join(' ')}`)
-  exec(`${command} ${deps.join(' ')}`)
+  exec(`${command} ${deps.join(' ')}`);
 
   return new Promise(res => {
-    res(directory)
-  })
+    res(directory);
+  });
 }
