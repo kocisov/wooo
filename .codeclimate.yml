@@ -6,6 +6,9 @@ engines:
     config:
       languages:
       - javascript
+ratings:
+  paths:
+  - src/**
 exclude_paths:
 - lib/**/*
 - node_modules/**/*
