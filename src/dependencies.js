@@ -1,5 +1,4 @@
-import chalk from 'chalk';
-import { execSync } from 'child_process';
+import { exec, yellow } from './fn';
 
 export async function prepare({ manager, template }) {
   const _manager = manager;
@@ -22,15 +21,8 @@ export async function prepare({ manager, template }) {
   };
 }
 
-const exec = cmd =>
-  execSync(cmd, {
-    stdio: 'inherit',
-  });
-
 export async function install({ command, manager, dependencies }) {
-  console.log(chalk.yellow(`Installing dependencies with ${manager}`));
-
+  console.log(yellow(`Installing dependencies with ${manager}`));
   const e = await exec(`${command} ${dependencies.join(' ')}`);
-
   return e;
 }

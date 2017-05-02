@@ -1,6 +1,6 @@
 import { existsSync, realpathSync, copySync } from 'fs-extra';
 import { resolve } from 'path';
-import chalk from 'chalk';
+import { red, green, yellow, white } from './fn';
 
 export default function createFiles({ dir, template }) {
   let tmplt;
@@ -8,23 +8,23 @@ export default function createFiles({ dir, template }) {
   const ad = realpathSync(process.cwd());
   const p = resolve(__dirname, `../templates/${template}`);
 
-  console.log(
-    chalk.white(`Wooo will create files in ${resolve(ad, dir)} directory.`)
-  );
+  const resolvedDir = resolve(ad, dir);
+
+  console.log(white(`Wooo will create files in ${resolvedDir} directory.`));
 
   if (existsSync(p)) {
     tmplt = p;
   } else {
     tmplt = resolve(__dirname, `../templates/default`);
 
-    console.log(chalk.red(`Template ${template} was not found!`));
-    console.log(chalk.yellow(`Installing default template instead...`));
+    console.log(red(`Template ${template} was not found!`));
+
+    console.log(yellow(`Installing default template instead...`));
   }
 
-  // console.log(tmplt)
-  copySync(tmplt, resolve(ad, dir));
+  copySync(tmplt, resolvedDir);
 
-  return chalk.green(
+  return green(
     `Wooo!!! Everything is done.
 Let's build something cool.`
   );

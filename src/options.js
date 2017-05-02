@@ -1,4 +1,6 @@
+import clear from 'clear';
 import { version } from '../package.json';
+import { white } from './fn';
 
 export default async function checkOptions(args) {
   let opts = {
@@ -8,7 +10,8 @@ export default async function checkOptions(args) {
   };
 
   if (args.version) {
-    console.log(`Wooo's current version is ${version}.`);
+    clear();
+    console.log(white(`Wooo's current version is ${version}.`));
     process.exit();
   }
 
