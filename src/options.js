@@ -1,30 +1,28 @@
-import clear from 'clear';
-import { bold } from './utils';
 import { version } from '../package.json';
 
-export default function options(argv) {
-  let opts = {};
+export default async function checkOptions(args) {
+  let opts = {
+    template: 'react-router-4',
+    manager: 'yarn',
+    dir: './src',
+  };
 
-  clear();
-
-  if (argv.version) {
-    bold(`Wooo's current version is ${version}.`);
+  if (args.version) {
+    console.log(`Wooo's current version is ${version}.`);
     process.exit();
   }
 
-  if (argv.template && argv.template.length > 0) {
+  if (args.template && args.template.length > 0) {
     opts.template = argv.template;
   }
 
-  if (argv.npm) {
-    opts.useNpm = true;
+  if (args.npm) {
+    opts.manager = 'npm';
   }
 
-  if (argv.dir && argv.dir.length > 0) {
-    opts.dir = argv.dir;
+  if (args.dir && args.dir.length > 0) {
+    opts.dir = args.dir;
   }
 
-  return new Promise(res => {
-    res(opts);
-  });
+  return opts;
 }

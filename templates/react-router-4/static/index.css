@@ -1,0 +1,31 @@
+* {
+  box-sizing: border-box;
+}
+
+::selection {
+  background: #3a3e3e;
+  color: #fff;
+  text-shadow: none;
+}
+
+body {
+  font-family: sans-serif;
+  font-weight: 300;
+  line-height: 1.5;
+  font-size: 14px;
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+ul,
+li,
+ol,
+p,
+a {
+  margin: 0;
+}

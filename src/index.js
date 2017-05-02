@@ -1,22 +1,25 @@
-#!/usr/bin/env node
-import yargs from 'yargs';
 import 'babel-polyfill';
+import argv from './argv';
+import checkOptions from './options';
+import { install, prepare } from './dependencies';
+import createFiles from './files';
+import clear from 'clear';
 
-import checkRc from './wooorc';
-import installDeps from './install-deps';
-import options from './options';
-import createFiles from './create-files';
+export default async function wooo() {
+  const args = await argv();
+  console.log('args:', args);
 
-const argv = yargs
-  .alias('v', 'version')
-  .alias('d', 'dir')
-  .alias('n', 'npm')
-  .alias('t', 'template').argv;
+  const options = await checkOptions(args);
+  console.log('options:', options);
 
-options(argv).then(opts => {
-  checkRc(opts).then(depOpts => {
-    installDeps(depOpts).then(directory => {
-      createFiles(directory);
-    });
-  });
-});
+  const prepared = await prepare(options);
+  console.log('prepared:', prepared);
+
+  const installed = await install(prepared);
+
+  const created = await createFiles(options);
+
+  clear();
+
+  console.log(created);
+}
