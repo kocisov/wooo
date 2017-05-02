@@ -8,9 +8,11 @@ engines:
       - javascript
 ratings:
   paths:
-  - src/**
+  - src/**/*
 exclude_paths:
 - lib/**/*
 - node_modules/**/*
 - _test_/**/*
+- test/**/*
 - templates/**/*
+- src/options.js
