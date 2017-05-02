@@ -1,0 +1,13 @@
+engines:
+  eslint:
+    enabled: true
+  duplication:
+    enabled: true
+    config:
+      languages:
+      - javascript
+exclude_paths:
+- lib/**/*
+- node_modules/**/*
+- _test_/**/*
+- templates/**/*
