@@ -9,12 +9,14 @@ export default history => {
 
   const middleware = [routerMiddleware(history), thunk];
 
+  // add redux-devtools for development
   const middlewares = process.env.NODE_ENV === 'production'
     ? applyMiddleware(...middleware)
     : composeEnhancers(applyMiddleware(...middleware));
 
   const store = createStore(reducers, middlewares);
 
+  // hot module replacement for reducers
   if (module.hot) {
     module.hot.accept('../modules', () => {
       const nextRootReducer = require('../modules').default;
