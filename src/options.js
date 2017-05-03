@@ -16,7 +16,7 @@ export default async function checkOptions(args) {
   }
 
   if (args.template && args.template.length > 0) {
-    opts.template = argv.template;
+    opts.template = args.template;
   }
 
   if (args.npm) {

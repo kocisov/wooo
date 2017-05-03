@@ -7,9 +7,9 @@ const initialState = {
   name: null,
   points: null,
   rank_group: null
-}
+};
 
-export default function user (state = initialState, action) {
+export default function user(state = initialState, action) {
   switch (action.type) {
     case USER_LOGGED_IN:
       return {
@@ -18,28 +18,37 @@ export default function user (state = initialState, action) {
 
         // spread over payload, instead of manually adding each key
         ...action.payload
-      }
+      };
 
     case USER_LOGGED_OUT:
-      return initialState
+      return initialState;
 
     default:
       return state;
   }
 }
 
-export function fakeLogin () {
+export function fakeLogin() {
   return dispatch => {
-    setTimeout(() => {
-      dispatch({
-        type: USER_LOGGED_IN,
-        payload: {
-          avatar: '//placecage.com/200/200',
-          name: 'UserName',
-          points: 1337,
-          rank_group: 5
-        }
-      })
-    }, 2000); // fake db delay
-  }
+    setTimeout(
+      () => {
+        dispatch({
+          type: USER_LOGGED_IN,
+          payload: {
+            avatar: '//placecage.com/200/200',
+            name: 'UserName',
+            points: 1337,
+            rank_group: 5
+          }
+        });
+      },
+      2000
+    ); // fake db delay
+  };
+}
+
+export function logout() {
+  return {
+    type: USER_LOGGED_OUT
+  };
 }

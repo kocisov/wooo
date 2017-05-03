@@ -1,6 +1,6 @@
 {
   "name": "redux-wooo",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Add redux scaffolding into your folder without pain.",
   "main": "lib/index.js",
   "repository": {

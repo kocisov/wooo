@@ -1,25 +1,20 @@
-import React from 'react'
-import { render } from 'react-dom'
-import { Provider } from 'react-redux'
-import { syncHistoryWithStore } from 'react-router-redux'
-import store from './store'
+import React from 'react';
+import { render } from 'react-dom';
+import { Provider } from 'react-redux';
+import { syncHistoryWithStore } from 'react-router-redux';
+import store from './store';
 
-import {
-  Router,
-  Route,
-  IndexRoute,
-  browserHistory
-} from 'react-router'
+import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 
-import App from './containers/App'
-import Home from './containers/Home'
+import App from './containers/App';
+import Home from './containers/Home';
 
-import './static/normalize.css'
-import './static/index.css'
+import './static/normalize.css';
+import './static/index.css';
 
-const history = syncHistoryWithStore(browserHistory, store)
+const history = syncHistoryWithStore(browserHistory, store);
 
-render((
+render(
   <Provider store={store}>
     <Router history={history}>
       <Route path="/" component={App}>
@@ -27,5 +22,6 @@ render((
         {/* Your routes here */}
       </Route>
     </Router>
-  </Provider>
-), document.getElementById('root'))
+  </Provider>,
+  document.getElementById('root')
+);
