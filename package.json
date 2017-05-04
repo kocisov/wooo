@@ -13,7 +13,7 @@
     "compile": "yarn prettier && babel src -d lib",
     "compile:with-minify": "babel src -d lib --minified",
     "prettier": "prettier --write src/**/*.js --single-quote --tab-width 2 --trailing-comma es5",
-    "pretest": "node test/pretest.js -d ./_test_",
+    "pretest": "node test/pretest.js -d ./_test_ -t react-router-4",
     "test": "mocha test/test.js"
   },
   "bin": {
