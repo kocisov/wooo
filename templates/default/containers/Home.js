@@ -12,7 +12,7 @@ class Home extends PureComponent {
         {isAuthenticated
           ? <div>
               <h2>Hello, {name}</h2>
-              <button onClick={fakeLogin}>Login</button>
+              <button onClick={logout}>Logout</button>
             </div>
           : <div>
               <h2>Hello</h2>

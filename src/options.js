@@ -4,7 +4,7 @@ import { white } from './fn';
 
 export default async function checkOptions(args) {
   let opts = {
-    template: 'react-router-4',
+    template: 'default',
     manager: 'yarn',
     dir: './src',
   };
