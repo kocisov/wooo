@@ -1,15 +1,16 @@
-import React from 'react';
-import { render } from 'react-dom';
-import { Provider } from 'react-redux';
-import { ConnectedRouter as Router } from 'react-router-redux';
-import createHistory from 'history/createBrowserHistory';
-import createStore from './store';
-import App from './containers/App';
+import React from 'react'
+import { render } from 'react-dom'
+import { Provider } from 'react-redux'
+import { ConnectedRouter as Router } from 'react-router-redux'
+import createHistory from 'history/createBrowserHistory'
+import createStore from './store'
+import App from './containers/App'
+import './static/css/reboot.css'
 
-const history = createHistory();
-const el = document.getElementById('root');
+const history = createHistory()
+const el = document.getElementById('root')
 
-const store = createStore(history);
+const store = createStore(history)
 
 function r(Component) {
   render(
@@ -19,14 +20,14 @@ function r(Component) {
       </Router>
     </Provider>,
     el
-  );
+  )
 }
 
-r(App);
+r(App)
 
 if (module.hot) {
   module.hot.accept('./containers/App', () => {
-    const NextApp = require('./containers/App').default;
-    r(NextApp);
-  });
+    const NextApp = require('./containers/App').default
+    r(NextApp)
+  })
 }

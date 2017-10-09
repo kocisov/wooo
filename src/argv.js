@@ -1,4 +1,4 @@
-import yargs from 'yargs';
+import yargs from 'yargs'
 
 export default function argv() {
   return yargs
@@ -23,5 +23,5 @@ export default function argv() {
       'n',
       'Specify if Wooo should install dependencies with npm instead of yarn'
     )
-    .help('h').argv;
+    .help('h').argv
 }
