@@ -1,1 +1,1 @@
-const wooo = require('../lib').default();
+const wooo = require('../lib').default()
