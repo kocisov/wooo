@@ -53,8 +53,8 @@ describe('after running wooo', () => {
       dp(resolveDir('../_test_/static'), done)
     })
 
-    it('should created static/reboot.css file', done => {
-      dp(resolveDir('../_test_/static/reboot.css'), done)
+    it('should created static/css/reboot.css file', done => {
+      dp(resolveDir('../_test_/static/css/reboot.css'), done)
     })
   })
 
